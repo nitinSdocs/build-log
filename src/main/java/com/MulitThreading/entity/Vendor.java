@@ -7,7 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
-@Document(collection = "vendor")
+@Document(collection = "ThreadPool_vendor")
 @Data
 @AllArgsConstructor
 @RequiredArgsConstructor
