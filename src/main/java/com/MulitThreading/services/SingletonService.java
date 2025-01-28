@@ -48,21 +48,21 @@ public class SingletonService {
     public void displayData1() throws InterruptedException{
         log.info("Thread Name: " + Thread.currentThread().getName());
         log.info("Scheduled 1: " +  LocalDateTime.now());
-        Thread.sleep(5*6*10000);
+        // Thread.sleep(5*6*10000);
     }
 
     @Scheduled(fixedRate = 2000)
     public void displayData2() throws InterruptedException{
         log.info("Thread Name: " + Thread.currentThread().getName());
         log.info("Scheduled 2: " +  LocalDateTime.now());
-        Thread.sleep(6*5*10000);
+        // Thread.sleep(6*5*10000);
     }
 
     // @Scheduled(fixedRate = 3000)
     public void displayData3() throws InterruptedException{
         log.info("Thread Name: " + Thread.currentThread().getName());
         log.info("Scheduled 3: " +  LocalDateTime.now());
-        Thread.sleep(6*5*10000);
+        // Thread.sleep(6*5*10000);
     }
 
 
