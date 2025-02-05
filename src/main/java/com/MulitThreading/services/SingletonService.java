@@ -23,6 +23,34 @@ public class SingletonService {
     	this.vendorRepository = vr; 
     }
 
+    @Async
+    public void asyncMethod1(int i) throws InterruptedException{
+        log.info("Task number: " + i);
+        log.info("Thread Name: " + Thread.currentThread().getName());
+        log.info("Async Method 1: " +  LocalDateTime.now());
+        Thread.sleep(20*1000);
+    }
+
+    @Async
+    public void asyncMethod2() throws InterruptedException{
+        log.info("Thread Name: " + Thread.currentThread().getName());
+        log.info("Async Method 2: " +  LocalDateTime.now());
+        Thread.sleep(10*1000);
+    }
+
+    @Async
+    public void asyncMethod3() throws InterruptedException{
+        log.info("Thread Name: " + Thread.currentThread().getName());
+        log.info("Async Method 3: " +  LocalDateTime.now());
+        Thread.sleep(10*1000);
+    }
+
+    @Async
+    public void asyncMethod4() throws InterruptedException{
+        log.info("Thread Name: " + Thread.currentThread().getName());
+        log.info("Async Method 4: " +  LocalDateTime.now());
+        Thread.sleep(10*1000);
+    }
 
     @Async
     public void saveData(List<Vendor> vendors){
@@ -44,26 +72,42 @@ public class SingletonService {
 
     }
 
-    @Scheduled(fixedRate = 5000)
-    public void displayData1() throws InterruptedException{
-        log.info("Thread Name: " + Thread.currentThread().getName());
-        log.info("Scheduled 1: " +  LocalDateTime.now());
-        // Thread.sleep(5*6*10000);
-    }
+//    // @Async("ExecutorForScheduled")
+//     // @Async
+//     @Scheduled(fixedDelay  = 10000)
+//   // @Scheduled(cron = "0/1 * * ? * *")
+//     public void displayData1() throws InterruptedException{
+//         log.info("Thread Name: " + Thread.currentThread().getName());
+//         log.info("Scheduled 1: " +  LocalDateTime.now());
+//         Thread.sleep(10*1000);
+//     }
 
-    @Scheduled(fixedRate = 2000)
-    public void displayData2() throws InterruptedException{
-        log.info("Thread Name: " + Thread.currentThread().getName());
-        log.info("Scheduled 2: " +  LocalDateTime.now());
-        // Thread.sleep(6*5*10000);
-    }
+//    // @Async("ExecutorForScheduled")
+//     // @Async
+//     @Scheduled(fixedDelay = 20000)
+//    //@Scheduled(cron = "0/2 * * ? * *")
+//     public void displayData2() throws InterruptedException{
+//         log.info("Thread Name: " + Thread.currentThread().getName());
+//         log.info("Scheduled 2: " +  LocalDateTime.now());
+//         Thread.sleep(10*1000);
 
-    // @Scheduled(fixedRate = 3000)
-    public void displayData3() throws InterruptedException{
-        log.info("Thread Name: " + Thread.currentThread().getName());
-        log.info("Scheduled 3: " +  LocalDateTime.now());
-        // Thread.sleep(6*5*10000);
-    }
+//     }
+
+//      @Scheduled(fixedDelay = 30000)
+//     //@Scheduled(cron = "0/7 * * ? * *")
+//     public void displayData3() throws InterruptedException{
+//         log.info("Thread Name: " + Thread.currentThread().getName());
+//         log.info("Scheduled 3: " +  LocalDateTime.now());
+//         Thread.sleep(10*1000);
+//     }
+
+//     @Scheduled(fixedDelay = 40000)
+//     //@Scheduled(cron = "0/7 * * ? * *")
+//     public void displayData4() throws InterruptedException{
+//         log.info("Thread Name: " + Thread.currentThread().getName());
+//         log.info("Scheduled 4: " +  LocalDateTime.now());
+//         Thread.sleep(10*1000);
+//     }
 
 
     

@@ -20,10 +20,24 @@ public class MultiThreadingController{
     private final SingletonService singletonService;
     
     
-    @GetMapping("/singleton-service")
+    @GetMapping("/async/save-data")
     public String serviceOne(@RequestBody List<Vendor> vendors){
     	log.info("Controller Thread: " + Thread.currentThread().getName());
         singletonService.saveData(vendors);
         return "Processing in Background.";
     } 
+
+    @GetMapping("/async/method1")
+    public String serviceTwo() throws InterruptedException{
+        try{
+            for(int i = 1; i <= 20; i++){
+                singletonService.asyncMethod1(i);
+            }
+        }
+        catch(Exception e){
+            log.error("Error: " + e.getMessage());
+        }
+        return "Processing in Background.";
+    }
+    
 }
